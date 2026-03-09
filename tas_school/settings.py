@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-your-secret-key-here-change-in-production'
 DEBUG = True
 
 # In production, set ALLOWED_HOSTS to the domain names of your application
-ALLOWED_HOSTS = ['tassech.com', 'www.tassech.com']
+ALLOWED_HOSTS = ['tassech.com', 'www.tassech.com', '62.72.20.88']
 
 # For development, you can use the following ALLOWED_HOSTS settings:
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '62.72.20.88']
@@ -170,7 +170,7 @@ SIMPLE_JWT = {
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "https://tassech.com"
+    "https://tassech.com",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:8000",
