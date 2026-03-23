@@ -9,9 +9,9 @@ from .admin import admin_site
 urlpatterns = [
     path('', include('accounts.urls')),  # Set the root URL to point to accounts app
     path('admin/', admin_site.urls),
-    path('api/auth/', include('accounts.urls')),
-    path('api/accounts/', include('accounts.urls')),
-    path('api/courses/', include('courses.urls')),
+    path('auth/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('courses/', include('courses.urls')),
 ]
 
 # Serve media files during development
