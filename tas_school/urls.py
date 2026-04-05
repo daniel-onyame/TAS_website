@@ -23,6 +23,10 @@ urlpatterns = [
     path('auth/', include('accounts.urls')),
     path('accounts/', include('accounts.urls')),
     path('courses/', include('courses.urls')),
+
+    # Development endpoints
+    path('api/accounts/', include('accounts.urls')),
+    path('api/courses/', include('courses.urls')),
 ]
 
 # Serve media files during development
