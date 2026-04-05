@@ -1,0 +1,28 @@
+# Django
+#---------------------------
+db.sqlite3
+*.sqlite3
+
+# Python
+#---------------------------
+__pycache__/
+*.pyc
+
+# Env
+#---------------------------
+.env
+
+# Static & media
+#---------------------------
+## static/
+## staticfiles/
+## media/
+
+# React
+## frontend/node_modules/
+## frontend/build/
+## frontend/static/
+
+# Logs
+#---------------------------
+*.log
