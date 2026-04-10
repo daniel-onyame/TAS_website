@@ -4,22 +4,27 @@ Django settings for tas_school project.
 
 from pathlib import Path
 import os
+import environ
 from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-your-secret-key-here-change-in-production'
+SECRET_KEY = env('SECRET_KEY', default='django-insecure-default-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
 # In production, set ALLOWED_HOSTS to the domain names of your application
-ALLOWED_HOSTS = ['tassech.com', 'www.tassech.com', '62.72.20.88']
+#ALLOWED_HOSTS = ['tassech.com', 'www.tassech.com', '62.72.20.88']
 
 # For development, you can use the following ALLOWED_HOSTS settings:
-#ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '62.72.20.88']
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 # Application definition
 INSTALLED_APPS = [
@@ -74,10 +79,21 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tas_school.wsgi.application'
 
 # Database
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST', default=''),
+        'PORT': env('DB_PORT', default=''),
     }
 }
 
@@ -174,10 +190,10 @@ SIMPLE_JWT = {
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     "https://tassech.com",
-    "http://localhost:3000",
-    "http://localhost:8000",
+    #"http://localhost:3000",
+    #"http://localhost:8000",
     #"http://127.0.0.1:3000",
-    "http://127.0.0.1:8000",
+    #"http://127.0.0.1:8000",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
