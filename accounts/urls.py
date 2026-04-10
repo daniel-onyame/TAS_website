@@ -37,8 +37,8 @@ urlpatterns = [
     # Gallery endpoints
     path('gallery/stats/', views.get_gallery_stats, name='gallery-stats'),
     path('gallery/icon-choices/', views.get_gallery_icon_choices, name='gallery-icon-choices'),
-    path('gallery/categories/list/', views.get_gallery_categories, name='gallery-categories-list'),
-    path('gallery/images/list/', views.get_gallery_images, name='gallery-images-list'),
+    path('gallery/categories/', views.get_gallery_categories, name='gallery-categories-list'),
+    path('gallery/images/', views.get_gallery_images, name='gallery-images-list'),
     
     # Accommodation endpoints
     path('accommodation/stats/', views.get_accommodation_stats, name='accommodation-stats'),
