@@ -15,7 +15,7 @@ env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY', default='django-insecure-default-key')
+SECRET_KEY = 'qarn&=ztio3#8)b!-1s-+o$62$z_=l67)pct54oqp^z0h+obd' #env('SECRET_KEY', default='django-insecure-default-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'tas_school.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST', default=''),
-        'PORT': env('DB_PORT', default=''),
+        'NAME': 'tas_db', #env('DB_NAME'),
+        'USER': 'tas_user', #env('DB_USER'),
+        'PASSWORD': 'strongpassword', #env('DB_PASSWORD'),
+        'HOST': 'localhost', #env('DB_HOST', default=''),
+        'PORT': '5432', #env('DB_PORT', default=''),
     }
 }
 
