@@ -21,7 +21,7 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-default-key')
 DEBUG = env.bool('DEBUG', default=False)
 
 # In production, set ALLOWED_HOSTS to the domain names of your application
-#ALLOWED_HOSTS = ['tassech.com', 'www.tassech.com', '62.72.20.88']
+ALLOWED_HOSTS = ['tassech.com', 'www.tassech.com', '62.72.20.88']
 
 # For development, you can use the following ALLOWED_HOSTS settings:
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
